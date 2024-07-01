@@ -1,5 +1,4 @@
 import React from "react";
-import Breadcrumb from "@/components/Breadcrumb";
 import Container from "@/components/Container";
 import Gallery from "@/components/Gallery";
 import PopularTags from "@/components/PopularTags";
@@ -10,6 +9,9 @@ import { AiFillFacebook, AiOutlineTwitter, AiFillInstagram, AiFillPinterest } fr
 import { HiOutlineTag } from "react-icons/hi";
 import { BsFillPersonFill } from "react-icons/bs"; 
 import SearchIcon from "@/components/icons/SearchIcon";
+import { Navbar } from '@/components/Navbar';
+import Breadcrumb from '@/components/Breadcrumb';
+import  Footer from '@/components/Footer';
 // import CommentIcon from "@/components/icons/CommentIcon";
 // import FacebookIcon from "@/components/icons/FacebookIcon";
 // import InstagramIcon from "@/components/icons/InstagramIcon";
@@ -25,8 +27,7 @@ const commentsData = [
     date: "26 Apr, 2021",
     message:
       "In a nisi commodo, porttitor ligula consequat, tincidunt dui. Nulla volutpat, metus eu aliquam malesuada, elit libero venenatis urna, consequat maximus arcu diam non diam.",
-    image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageSrc": "/blog/detail1.svg",
   },
   {
     name: "Devon Lane",
@@ -64,6 +65,7 @@ const commentsData = [
 const BlogDetail = () => {
   return (
     <div>
+      <Navbar />
       <div className="container mx-auto flex flex-col items-center w-full mb-10">
         <Container>
           <div className="mb-8">
@@ -73,7 +75,7 @@ const BlogDetail = () => {
           <div className="flex items-start space-x-[20px]">
             <div className="w-full flex flex-1 flex-col space-y-[37.5px]">
               <img
-                src="https://images.pexels.com/photos/8326474/pexels-photo-8326474.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                src="https://s3-alpha-sig.figma.com/img/e656/2577/8d860f4f9f0d03a118e8935584c4281b?Expires=1721001600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ahLc5--jQlz8ZKJjTMFVPq~MJjfas3tI1cQat~o7camBjbiCim280RMNBc~tFAeGpdkK~Q2uZFeSY-XfwvNqmrcdJkteSoDsO1S1pNC2Z6vkKGAs1VI0I9iixtu5Z2m6dAq3XvDVuQUAmHvzvADH2vBX-LwkYhZxOXK7ZwHVOWvlJAEZDB1GQbIQVeLLNf2FHZlNJAxyKqeRohfhhUCYZH~Le1LLMAogjAcd1GNE035HDN~OMLaWbdKsYcExRYphaltZhP7SHSgQ3sAtFpbmLOm3yIGhJHvAA6moDO687afuocB7jQvRC-BRRTf4v0WXq53IjErP4ATLMBhvU~zDCA__"
                 alt=""
                 className="h-[600px] object-cover rounded-lg"
               />
@@ -158,12 +160,12 @@ const BlogDetail = () => {
 
               <div className="flex items-center space-x-4">
                 <img
-                  src="/blog/image-01.png"
+                  src="/blog/image-01.svg"
                   alt="image-01"
                   className="h-[356px] w-1/2 object-cover rounded-lg"
                 />
                 <img
-                  src="/blog/image-02.png"
+                  src="/blog/image-02.svg"
                   alt="image-02"
                   className="h-[356px] w-1/2 object-cover rounded-lg"
                 />
@@ -180,7 +182,7 @@ const BlogDetail = () => {
               </span>
 
               <img
-                src="/blog/banner.png"
+                src="/blog/banner.svg"
                 alt="banner"
                 className="rounded-lg object-cover"
               />
@@ -243,7 +245,7 @@ const BlogDetail = () => {
                   </div>
                   <button
                     type="submit"
-                    className="bg-[#008001] w-[204px] text-white font-semibold rounded-full py-2 px-8"
+                    className="bg-[#008001] w-[214px] text-white font-semibold rounded-full py-2 px-8"
                   >
                     Post Comments
                   </button>

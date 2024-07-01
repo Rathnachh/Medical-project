@@ -1,77 +1,113 @@
-import React, { FC } from 'react';
-import Container from './Container';
-import { FiArrowRight, FiArrowLeft} from 'react-icons/fi';
+import React from "react";
+import Image from "next/image";
+import { IoArrowForwardOutline, IoArrowBack } from "react-icons/io5";
+import { GoTag } from "react-icons/go";
+import { CiUser } from "react-icons/ci";
+import { VscComment } from "react-icons/vsc";
+import Link from "next/link";
+import Container from '@/components/Container';
 
-interface BlogPost {
-  image: string;
-  date: string;
-  category: string;
-  title: string;
-  link: string;
-}
-
-const blogPosts: BlogPost[] = [
+const blogPosts = [
   {
-    image: "/blog/blog1.png",
-    date: "18 Nov",
+    imageSrc: "/blog/blog1.png",
+    date: "18",
+    month: "NOV",
     category: "Food",
-    title: "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
-    link: "#",
+    author: "Admin",
+    comments: 65,
+    title:
+      "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
   },
   {
-    image: "/blog/blog2.png",
-    date: "18 Nov",
+    imageSrc: "/blog/blog2.png",
+    date: "18",
+    month: "NOV",
     category: "Food",
-    title: "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
-    link: "#",
+    author: "Admin",
+    comments: 65,
+    title:
+      "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
   },
   {
-    image: "/blog/blog3.png",
-    date: "18 Nov",
+    imageSrc: "/blog/blog3.png",
+    date: "18",
+    month: "NOV",
     category: "Food",
-    title: "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
-    link: "#",
+    author: "Admin",
+    comments: 65,
+    title:
+      "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
   },
 ];
 
-const BlogCard: FC<BlogPost> = ({ image, date, category, title, link }) => (
-  <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-    <img src={image} alt={title} className="w-full h-48 object-cover" />
-    <div className="p-4">
-      <div className="flex items-center text-gray-500 text-sm">
-        <span className="mr-2">{date}</span>
-        <span className="mr-2">•</span>
-        <span className="mr-2">{category}</span>
-        <span className="mr-2">•</span>
-        <span>By Admin</span>
-        <span className="mr-2">•</span>
-        <span>35 Comments</span>
-      </div>
-      <h2 className="mt-2 text-lg font-semibold">{title}</h2>
-      <a href={link} className="text-green-600 mt-2 inline-block">Read More →</a>
-    </div>
-  </div>
-);
-
-const Blog: FC = () => {
+const Blog = () => {
   return (
-    <Container>
-        <div className="container mx-auto text-center">
-          <div className="w-full flex items-center justify-between">
-          <h2 className="text-[32px] font-semibold">Daily Blog</h2>
-            <div className="flex items-center space-x-2">
-              <FiArrowLeft />
-              <FiArrowRight  />
+    <>
+      <Link href='/blog'>
+<Container>
+        <div className="mx-auto p-2 md:p-0 mt-20">
+          <div className="flex justify-between items-center my-8 md:my-16">
+            <div>
+            <h2 className="text-[32px] font-semibold">Daily Blog</h2>
+            </div>
+            <div className="flex items-center gap-3 text-white cursor-pointer">
+              <div className="border border-[#E6E6E6] p-2 rounded-full text-black">
+                <IoArrowBack />
+              </div>
+              <div className="bg-primary p-2 rounded-full">
+                <IoArrowForwardOutline />
+              </div>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {blogPosts.map((post, index) => (
-          <BlogCard key={index} {...post} />
-        ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {blogPosts.map((post, index) => (
+              <div
+                key={index}
+                className="group border rounded-lg shadow-xl hover:shadow-2xl transition-shadow"
+              >
+                <div className="relative">
+                  <Image
+                    src={post.imageSrc}
+                    alt="blog"
+                    layout="responsive"
+                    width={100}
+                    height={100}
+                    className="object-cover rounded-t-lg"
+                  />
+                  <div className="absolute bottom-4 left-4 flex flex-col justify-center items-center bg-gray-50 w-16 h-16 rounded-lg">
+                    <p className="text-lg font-medium text-[#1A1A1A]">
+                      {post.date}
+                    </p>
+                    <p className="text-xs text-[#808080]">{post.month}</p>
+                  </div>
+                </div>
+                <div className="p-4 md:p-6">
+                  <div className="flex items-center gap-2 text-xs md:text-sm font-normal text-[#666666] mt-3">
+                    <GoTag />
+                    <p>{post.category}</p>
+                    <CiUser />
+                    <p>By {post.author}</p>
+                    <VscComment />
+                    <p>{post.comments} Comments</p>
+                  </div>
+                  <div className="mt-2">
+                    <p className="text-sm md:text-base font-medium">
+                      {post.title}
+                    </p>
+                  </div>
+                  <div className="flex items-center mt-4 md:mt-6 font-semibold text-primary text-sm md:text-base">
+                    <button className="mr-2">Read More</button>
+                    <IoArrowForwardOutline />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </Container>
+        </Container>
+      </Link>
+    </>
   );
-}
+};
 
 export default Blog;
