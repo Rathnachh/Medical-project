@@ -26,9 +26,9 @@ const Nav = () => {
           <select
             className="text-sm hover:bg-green-500 hover:text-white px-2 py-1 rounded cursor-pointer bg-transparent border-none outline-none"
           >
-            <option value="" className="text-black">Blog</option>
+            <option value="/blog" className="text-black">Blog</option>
             <option value="/blog" className="text-black">Blog 1</option>
-            <option value="/blog2" className="text-black">Blog 2</option>
+            <option value="/blog" className="text-black">Blog 2</option>
           </select>
         </div>
         <Link href="/about" passHref>

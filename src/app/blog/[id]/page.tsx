@@ -5,13 +5,18 @@ import PopularTags from "@/components/PopularTags";
 import RecentlyAdded from "@/components/RecentlyAdded";
 import TopCategories from "@/components/TopCategories";
 import { FaRegComment } from "react-icons/fa";
-import { AiFillFacebook, AiOutlineTwitter, AiFillInstagram, AiFillPinterest } from "react-icons/ai";
+import {
+  AiFillFacebook,
+  AiOutlineTwitter,
+  AiFillInstagram,
+  AiFillPinterest,
+} from "react-icons/ai";
 import { HiOutlineTag } from "react-icons/hi";
-import { BsFillPersonFill } from "react-icons/bs"; 
+import { BsFillPersonFill } from "react-icons/bs";
 import SearchIcon from "@/components/icons/SearchIcon";
-import { Navbar } from '@/components/Navbar';
-import Breadcrumb from '@/components/Breadcrumb';
-import  Footer from '@/components/Footer';
+import { Navbar } from "@/components/Navbar";
+import Breadcrumb from "@/components/Breadcrumb";
+import Footer from "@/components/Footer";
 // import CommentIcon from "@/components/icons/CommentIcon";
 // import FacebookIcon from "@/components/icons/FacebookIcon";
 // import InstagramIcon from "@/components/icons/InstagramIcon";
@@ -27,7 +32,8 @@ const commentsData = [
     date: "26 Apr, 2021",
     message:
       "In a nisi commodo, porttitor ligula consequat, tincidunt dui. Nulla volutpat, metus eu aliquam malesuada, elit libero venenatis urna, consequat maximus arcu diam non diam.",
-      "imageSrc": "/blog/detail1.svg",
+    image:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Devon Lane",
@@ -245,7 +251,7 @@ const BlogDetail = () => {
                   </div>
                   <button
                     type="submit"
-                    className="bg-[#008001] w-[214px] text-white font-semibold rounded-full py-2 px-8"
+                    className="bg-[#008001] w-[214px] text-white font-semibold rounded-full py-2 px-8 "
                   >
                     Post Comments
                   </button>
@@ -301,20 +307,17 @@ const BlogDetail = () => {
                 </div>
               </div>
               <div className="bg-gray-200 w-full h-[1px]" />
-              {/* Top Categories */}
               <TopCategories />
               <div className="bg-gray-200 w-full h-[1px]" />
-              {/* Popular Tags */}
               <PopularTags />
               <div className="bg-gray-200 w-full h-[1px]" />
-              {/* Our Gallery */}
               <Gallery />
-              {/* Recently Added */}
               <RecentlyAdded />
             </div>
           </div>
         </Container>
       </div>
+      <Footer />
     </div>
   );
 };

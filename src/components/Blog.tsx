@@ -91,11 +91,11 @@ const Blog = () => {
                     <p>{post.comments} Comments</p>
                   </div>
                   <div className="mt-2">
-                    <p className="text-sm md:text-base font-medium">
+                    <p className="text-sm md:text-base font-medium text-green-600">
                       {post.title}
                     </p>
                   </div>
-                  <div className="flex items-center mt-4 md:mt-6 font-semibold text-primary text-sm md:text-base">
+                  <div className="flex items-center mt-4 md:mt-6 font-semibold text-green-600 text-sm md:text-base">
                     <button className="mr-2">Read More</button>
                     <IoArrowForwardOutline />
                   </div>
