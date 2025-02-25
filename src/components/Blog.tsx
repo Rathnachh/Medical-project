@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
-import { IoArrowForwardOutline, IoArrowBack } from "react-icons/io5";
+import { IoArrowForwardOutline } from "react-icons/io5";
 import { GoTag } from "react-icons/go";
 import { CiUser } from "react-icons/ci";
 import { VscComment } from "react-icons/vsc";
 import Link from "next/link";
-import Container from '@/components/Container';
+import Container from "@/components/Container";
 
 const blogPosts = [
   {
@@ -22,91 +22,87 @@ const blogPosts = [
     imageSrc: "/blog/blog2.png",
     date: "18",
     month: "NOV",
-    category: "Food",
+    category: "Travel",
     author: "Admin",
-    comments: 65,
+    comments: 42,
     title:
-      "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
+      "Aliquam erat volutpat. Integer id orci ut libero tincidunt efficitur.",
   },
   {
     imageSrc: "/blog/blog3.png",
     date: "18",
     month: "NOV",
-    category: "Food",
+    category: "Technology",
     author: "Admin",
-    comments: 65,
-    title:
-      "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
+    comments: 30,
+    title: "Donec non velit nec purus euismod vestibulum ac at nunc.",
   },
 ];
 
 const Blog = () => {
+
   return (
-    <>
-      <Link href='/blog'>
-<Container>
-        <div className="mx-auto p-2 md:p-0 mt-20">
-          <div className="flex justify-between items-center my-8 md:my-16">
-            <div>
-            <h2 className="text-[32px] font-semibold">Daily Blog</h2>
-            </div>
-            <div className="flex items-center gap-3 text-white cursor-pointer">
-              <div className="border border-[#E6E6E6] p-2 rounded-full text-black">
-                <IoArrowBack />
+
+    <Link href='/blog'>
+    <div className="container mx-auto px-4 sm:px-6 py-8">
+      {/* Header Section */}
+      <div className="flex flex-col md:flex-row justify-between items-center mb-8">
+        <h2 className="text-2xl md:text-3xl font-semibold text-center md:text-left">
+          Daily Blog
+        </h2>
+        <Link
+          href="/blog"
+          className="flex items-center text-green-600 hover:underline mt-4 md:mt-0"
+        >
+          <span className="text-sm md:text-base font-medium">View All</span>
+          <IoArrowForwardOutline className="ml-1 text-lg" />
+        </Link>
+      </div>
+
+      {/* Blog Grid Section */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {blogPosts.map((post, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-center border border-gray-200 rounded-lg transition-shadow hover:shadow-md"
+          >
+            <div className="relative w-full h-[200px] sm:h-[250px] lg:h-[300px]">
+              <Image
+                src={post.imageSrc}
+                alt="blog"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-t-lg"
+              />
+              <div className="absolute bottom-4 left-4 flex flex-col items-center bg-gray-50 w-14 h-14 rounded-md shadow-md">
+                <p className="text-lg font-semibold text-[#1A1A1A]">
+                  {post.date}
+                </p>
+                <p className="text-xs text-[#808080]">{post.month}</p>
               </div>
-              <div className="bg-primary p-2 rounded-full">
+            </div>
+            <div className="p-4">
+              <div className="flex flex-wrap items-center gap-2 text-xs md:text-sm font-normal text-[#666666]">
+                <GoTag />
+                <p>{post.category}</p>
+                <CiUser />
+                <p>By {post.author}</p>
+                <VscComment />
+                <p>{post.comments} Comments</p>
+              </div>
+              <h3 className="mt-3 text-sm md:text-base font-medium text-green-600">
+                {post.title}
+              </h3>
+              <div className="flex items-center mt-4 font-semibold text-green-600 text-sm md:text-base">
+                <button className="mr-2">Read More</button>
                 <IoArrowForwardOutline />
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {blogPosts.map((post, index) => (
-              <div
-                key={index}
-                className="group border rounded-lg shadow-xl hover:shadow-2xl transition-shadow"
-              >
-                <div className="relative">
-                  <Image
-                    src={post.imageSrc}
-                    alt="blog"
-                    layout="responsive"
-                    width={100}
-                    height={100}
-                    className="object-cover rounded-t-lg"
-                  />
-                  <div className="absolute bottom-4 left-4 flex flex-col justify-center items-center bg-gray-50 w-16 h-16 rounded-lg">
-                    <p className="text-lg font-medium text-[#1A1A1A]">
-                      {post.date}
-                    </p>
-                    <p className="text-xs text-[#808080]">{post.month}</p>
-                  </div>
-                </div>
-                <div className="p-4 md:p-6">
-                  <div className="flex items-center gap-2 text-xs md:text-sm font-normal text-[#666666] mt-3">
-                    <GoTag />
-                    <p>{post.category}</p>
-                    <CiUser />
-                    <p>By {post.author}</p>
-                    <VscComment />
-                    <p>{post.comments} Comments</p>
-                  </div>
-                  <div className="mt-2">
-                    <p className="text-sm md:text-base font-medium text-green-600">
-                      {post.title}
-                    </p>
-                  </div>
-                  <div className="flex items-center mt-4 md:mt-6 font-semibold text-green-600 text-sm md:text-base">
-                    <button className="mr-2">Read More</button>
-                    <IoArrowForwardOutline />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        </Container>
-      </Link>
-    </>
+        ))}
+      </div>
+    </div>
+    </Link>
   );
 };
 

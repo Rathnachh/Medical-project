@@ -11,11 +11,8 @@ const About = () => {
   return (
     <div>
       <Navbar />
-      <Container>
         <Breadcrumb />
         <AboutUs/>
-        
-      </Container>
       <Value />
       <Team />
       <Footer/>

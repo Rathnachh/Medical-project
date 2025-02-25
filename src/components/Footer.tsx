@@ -1,154 +1,166 @@
 import React from "react";
 import { FiFacebook, FiTwitter, FiPrinter, FiInstagram } from 'react-icons/fi';
 import { MdMailOutline, MdSmartphone } from 'react-icons/md';
-// import { IoPinterest } from 'react-icons/io';
 import Container from "./Container";
 
 const Footer: React.FC = () => {
   return (
     <div>
-      <div className="h-[88px] bg-[#F7F7F7] w-full flex items-center justify-center">
+      {/* Top Section */}
+      <div className="h-20 bg-[#F7F7F7] flex items-center justify-center">
         <Container>
-          <div className="flex items-center justify-between w-full">
-            <div className="flex items-center space-x-4">
-              <span className="text-[16px] font-medium text-gray-900">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
+            <div className="flex items-center gap-4">
+              <span className="text-base font-medium text-gray-900 hover:text-[#008001] cursor-pointer">
                 Terms
               </span>
-              <span className="text-[16px] font-medium text-gray-900">
+              <span className="text-base font-medium text-gray-900 hover:text-[#008001] cursor-pointer">
                 Privacy
               </span>
-              <span className="text-[16px] font-medium text-gray-900">
+              <span className="text-base font-medium text-gray-900 hover:text-[#008001] cursor-pointer">
                 Cookies
               </span>
             </div>
-            <div className="flex items-center space-x-4">
-              <button className="hover:text-white hover:bg-[#008001] p-2 rounded-full">
+            <div className="flex items-center gap-4">
+              <button
+                aria-label="Facebook"
+                className="p-2 rounded-full hover:bg-[#008001] hover:text-white transition-colors duration-300"
+              >
                 <FiFacebook className="w-6 h-6" />
               </button>
-              <button className="hover:text-white hover:bg-[#008001] p-2 rounded-full">
+              <button
+                aria-label="Twitter"
+                className="p-2 rounded-full hover:bg-[#008001] hover:text-white transition-colors duration-300"
+              >
                 <FiTwitter className="w-6 h-6" />
               </button>
-              <button className="hover:text-white hover:bg-[#008001] p-2 rounded-full">
+              <button
+                aria-label="Printer"
+                className="p-2 rounded-full hover:bg-[#008001] hover:text-white transition-colors duration-300"
+              >
                 <FiPrinter className="w-6 h-6" />
               </button>
-              <button className="hover:text-white hover:bg-[#008001] p-2 rounded-full">
+              <button
+                aria-label="Instagram"
+                className="p-2 rounded-full hover:bg-[#008001] hover:text-white transition-colors duration-300"
+              >
                 <FiInstagram className="w-6 h-6" />
               </button>
             </div>
           </div>
         </Container>
       </div>
+
+      {/* Main Footer */}
       <footer
-        className="bg-gray-800 text-white py-20"
+        className="bg-gray-800 text-white py-12"
         style={{
           backgroundImage: `url('/footer-bg.png')`,
           backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
-        <Container>
-          <div className="flex items-center">
-            <div className="flex flex-col items-start space-y-4 mr-20 w-[336px]">
+        
+          <div className="container mx-auto flex flex-col lg:flex-row gap-8 lg:gap-16 px-4">
+            {/* Contact Info */}
+            <div className="flex flex-col space-y-4 lg:max-w-[300px]">
               <img
                 src="/logo.svg"
                 alt="Logo"
-                className="h-10 w-10 mb-4"
+                className="h-10 w-10"
               />
-              <p className="text-[16px] font-medium">
-                Address: No.2A, Down Town Road No 7, Phum Kork Chambak, Phnom
-                Penh
+              <p className="text-base font-medium">
+                Address: No.2A, Down Town Road No 7, Phum Kork Chambak, Phnom Penh
               </p>
-              <div className="flex items-center">
-                <MdSmartphone className="w-6 h-6 mr-2" />
+              <div className="flex items-center gap-2">
+                <MdSmartphone className="w-6 h-6" />
                 <p>Office: (+855) 088 5654 093</p>
               </div>
-              <div className="flex items-center">
-                <MdMailOutline className="w-6 h-6 mr-2" />
+              <div className="flex items-center gap-2">
+                <MdMailOutline className="w-6 h-6" />
                 <p>Support: info@medi.com</p>
               </div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-8">
+
+            {/* Links Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 flex-1">
               <div>
-                <h4 className="font-semibold text-[16px] text-white mb-4">
-                  My Account
-                </h4>
+                <h4 className="font-semibold text-lg mb-4">My Account</h4>
                 <div className="flex flex-col space-y-2">
-                  <p className="text-[#999999] text-[14px] font-normal hover:text-white cursor-pointer">
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                     My Account
-                  </p>
-                  <p className="text-[#999999] text-[14px] font-normal hover:text-white cursor-pointer">
+                  </a>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                     Order History
-                  </p>
-                  <p className="text-[#999999] text-[14px] font-normal hover:text-white cursor-pointer">
+                  </a>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                     Shopping Cart
-                  </p>
-                  <p className="text-[#999999] text-[14px] font-normal hover:text-white cursor-pointer">
+                  </a>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                     Wishlist
-                  </p>
+                  </a>
                 </div>
               </div>
               <div>
-                <h4 className="font-semibold text-[16px] text-white mb-4">
-                  Helps
-                </h4>
+                <h4 className="font-semibold text-lg mb-4">Helps</h4>
                 <div className="flex flex-col space-y-2">
-                  <p className="text-[#999999] text-[14px] font-normal hover:text-white cursor-pointer">
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                     Contact
-                  </p>
-                  <p className="text-[#999999] text-[14px] font-normal hover:text-white cursor-pointer">
+                  </a>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                     Faqs
-                  </p>
-                  <p className="text-[#999999] text-[14px] font-normal hover:text-white cursor-pointer">
+                  </a>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                     Terms & Condition
-                  </p>
-                  <p className="text-[#999999] text-[14px] font-normal hover:text-white cursor-pointer">
+                  </a>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                     Privacy Policy
-                  </p>
+                  </a>
                 </div>
               </div>
               <div>
-                <h4 className="font-semibold text-[16px] text-white mb-4">
-                  Proxy
-                </h4>
+                <h4 className="font-semibold text-lg mb-4">Proxy</h4>
                 <div className="flex flex-col space-y-2">
-                  <p className="text-[#999999] text-[14px] font-normal hover:text-white cursor-pointer">
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                     About
-                  </p>
-                  <p className="text-[#999999] text-[14px] font-normal hover:text-white cursor-pointer">
+                  </a>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                     Shop
-                  </p>
-                  <p className="text-[#999999] text-[14px] font-normal hover:text-white cursor-pointer">
+                  </a>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                     Product
-                  </p>
-                  <p className="text-[#999999] text-[14px] font-normal hover:text-white cursor-pointer">
+                  </a>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                     Track Order
-                  </p>
+                  </a>
                 </div>
               </div>
               <div>
-                <h4 className="font-semibold text-[16px] text-white mb-4">
-                  Categories
-                </h4>
+                <h4 className="font-semibold text-lg mb-4">Categories</h4>
                 <div className="flex flex-col space-y-2">
-                  <p className="text-[#999999] text-[14px] font-normal hover:text-white cursor-pointer">
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                     Fruit & Vegetables
-                  </p>
-                  <p className="text-[#999999] text-[14px] font-normal hover:text-white cursor-pointer">
+                  </a>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                     Meat & Fish
-                  </p>
-                  <p className="text-[#999999] text-[14px] font-normal hover:text-white cursor-pointer">
+                  </a>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                     Bread & Bakery
-                  </p>
-                  <p className="text-[#999999] text-[14px] font-normal hover:text-white cursor-pointer">
+                  </a>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                     Beauty & Health
-                  </p>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-          <div className="text-center border-t border-gray-700 pt-4 mt-8">
-            <p className="text-[#808080]">Developed by Digital Solution</p>
+
+          {/* Copyright Section */}
+          <div className="text-center border-t border-gray-700 pt-6 mt-8">
+            <p className="text-gray-500 text-sm">
+              Developed by Digital Solution
+            </p>
           </div>
-        </Container>
       </footer>
     </div>
   );

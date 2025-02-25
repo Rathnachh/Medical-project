@@ -11,10 +11,8 @@ const About = () => {
   return (
     <div>
       <Navbar />
-      <Container>
         <Breadcrumb />
         <Contact/> 
-      </Container>
       <Image
                   src="/contact/map.svg"
                   alt="map"

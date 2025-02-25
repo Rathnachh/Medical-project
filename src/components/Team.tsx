@@ -52,18 +52,13 @@ const teamMembers = [
 const Team = () => {
   return (
     <section className="py-12">
-    <Container>
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-semibold mb-8 text-left">Our team</h2>
-        <div className="w-full flex items-center justify-between">
-          <p className="text-left mb-12 w-1/2">
+      <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <h2 className="text-4xl font-semibold mb-8 text-center">Our team</h2>
+        <div className="w-full flex items-center justify-ceter">
+          <p className="text-gray-500 text-center mb-12">
             Explore the whole collection of open-source web components and
             elements built with the utility classes from Tailwind
           </p>
-          <div className="flex items-center space-x-2 ">
-            <FiArrowLeft />
-            <FiArrowRight />
-          </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {teamMembers.map((member, index) => (
@@ -115,7 +110,6 @@ const Team = () => {
           ))}
         </div>
       </div>
-      </Container>
     </section>
   );
 };

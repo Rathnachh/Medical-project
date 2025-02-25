@@ -25,7 +25,7 @@ const Breadcrumb: React.FC = () => {
   });
 
   return (
-    <nav className="py-3" aria-label="breadcrumb">
+    <nav className="container mx-auto py-3 px-6 md:px-10 lg:px-20" aria-label="breadcrumb">
       <MUIBreadcrumbs separator={<MdChevronRight />} aria-label="breadcrumb">
         <Link href="/" className="flex items-center text-gray-600 hover:text-gray-900">
           <AiFillHome className="mr-1 text-xl" />
