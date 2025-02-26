@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { FiArrowRight } from 'react-icons/fi';
 
@@ -15,10 +16,12 @@ const MaterialsDoctorCard= () => {
         <span className="text-white">
           Started at <strong className="text-red-600">$79.99</strong>
         </span>
+        <Link href="/blog">
         <button className="mt-6 px-10 py-[13.5px] font-semibold bg-white text-[#008001] rounded-full border-[#008001] border-2 flex items-center justify-center space-x-2">
           <span>Shop Now</span>
           <FiArrowRight />
         </button>
+        </Link>
       </div>
     </div>
   );

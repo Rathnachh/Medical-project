@@ -1,6 +1,7 @@
 'use client';
 import React, { Component } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { FiArrowRight, FiArrowLeft } from 'react-icons/fi';
 
 interface Slide {
@@ -9,6 +10,7 @@ interface Slide {
   heading: string;
   description: string;
   buttonText: string;
+  link: string;
 }
 
 interface Props {}
@@ -33,6 +35,7 @@ class MedicalCarousel extends Component<Props, State> {
         description:
           'Medicom experienced since 1993 in medical equipment supply. Sale up to 30% OFF.',
         buttonText: 'Shop Now',
+        link: '/blog'
       },
       {
         imageSrc: '/medical.svg',
@@ -41,6 +44,7 @@ class MedicalCarousel extends Component<Props, State> {
         description:
           'Medicom is a major supplier of medical and laboratory equipment throughout the kingdom.',
         buttonText: 'Shop Now',
+        link: '/blog'
       },
     ];
   }
@@ -102,13 +106,17 @@ class MedicalCarousel extends Component<Props, State> {
                 </span>
               </div>
 
+              <Link href={slide.link}>
               <button className="mt-6 px-6 sm:px-8 py-3 sm:py-4 bg-[#008001] text-white rounded-full flex items-center space-x-2 text-sm sm:text-base">
                 <span>{slide.buttonText}</span>
                 <FiArrowRight />
               </button>
+          </Link>
+              
             </div>
 
             {/* Right Arrow */}
+            
             <button
               className="absolute right-2 lg:right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 hover:bg-gray-100 shadow-md"
               onClick={this.nextSlide}

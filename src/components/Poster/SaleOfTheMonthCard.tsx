@@ -1,5 +1,6 @@
 import React from "react";
 import { FiArrowRight } from 'react-icons/fi';
+import Link from 'next/link';
 // import Countdown from 'react-countdown';
 
 const SaleOfTheMonthCard: React.FC = () => {
@@ -19,10 +20,12 @@ const SaleOfTheMonthCard: React.FC = () => {
         </p>
         <h3 className="text-4xl font-bold text-gray-800">Sale of the Month</h3>
         {/* <Countdown date={targetDate} /> */}
+        <Link href="/blog">
         <button className="mt-6 px-8 py-4 bg-[#008001] text-white rounded-full flex items-center justify-center space-x-2">
           <span>Shop Now</span>
           <FiArrowRight />
         </button>
+        </Link>
       </div>
     </div>
   );

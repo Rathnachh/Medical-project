@@ -19,8 +19,8 @@ const Nav = () => {
             Shop
           </button>
           <div className="absolute left-0 hidden group-hover:block bg-white text-black mt-1 rounded shadow-md w-32">
-            <Link href="/shop" className="block px-3 py-2 hover:bg-green-500 hover:text-white">Shop 1</Link>
-            <Link href="/shop2" className="block px-3 py-2 hover:bg-green-500 hover:text-white">Shop 2</Link>
+            <Link href="/blog" className="block px-3 py-2 hover:bg-green-500 hover:text-white">Shop 1</Link>
+            <Link href="/blog" className="block px-3 py-2 hover:bg-green-500 hover:text-white">Shop 2</Link>
           </div>
         </div>
 
@@ -30,8 +30,8 @@ const Nav = () => {
             Blog
           </button>
           <div className="absolute left-0 hidden group-hover:block bg-white text-black mt-1 rounded shadow-md w-32">
-            <Link href="/blog1" className="block px-3 py-2 hover:bg-green-500 hover:text-white">Blog 1</Link>
-            <Link href="/blog2" className="block px-3 py-2 hover:bg-green-500 hover:text-white">Blog 2</Link>
+            <Link href="/blog" className="block px-3 py-2 hover:bg-green-500 hover:text-white">Blog 1</Link>
+            <Link href="/blog" className="block px-3 py-2 hover:bg-green-500 hover:text-white">Blog 2</Link>
           </div>
         </div>
 
